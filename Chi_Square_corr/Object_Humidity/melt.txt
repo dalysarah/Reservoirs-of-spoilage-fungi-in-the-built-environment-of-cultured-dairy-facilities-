@@ -1,0 +1,5 @@
+Object	Humid.VeryHumid	Standard (30-60)	Standard/Dry(0-30)
+Floor	15	14	16
+Wall/Ceiling	8	9	3
+Door	5	8	20
+Fan/Vent	0	3	13

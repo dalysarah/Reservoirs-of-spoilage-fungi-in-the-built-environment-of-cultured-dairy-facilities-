@@ -1,0 +1,4 @@
+Facility	Dry	Wet
+Facility1	36	8
+Facility2	28	5
+Facility3	30	12

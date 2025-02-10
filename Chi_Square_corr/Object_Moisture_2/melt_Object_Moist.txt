@@ -1,0 +1,5 @@
+Object	Dry	Wet
+Floor	35	13
+Wall/Ceiling	14	6
+Door	29	6
+Fan/Vent	16	0

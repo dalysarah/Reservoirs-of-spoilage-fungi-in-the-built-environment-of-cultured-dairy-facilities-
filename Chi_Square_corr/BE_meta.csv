@@ -1,0 +1,120 @@
+Sample ID,Location.Sample.date,Shannon,Fill_bins_YM,Fill_bins_Div,Chao1,Fill_bins_Chao1,Year,Season,Facility,Facility.1,Production.Area,Object,Shannon,YM,Log10YM,Temp,Surface Moisture,Humid,Sant,Risk Zone,Surface_Moisture2
+sample-36,B.05.2,1.66,Low,Medium,98,Medium,2022,Fall,Facility2,Batavia,Raw,Door,1.66,0,0,Ambient (~70-75),Dry,Standard (30-60),Weekly,3,Dry
+sample-288,B.05A.1,0.37,Low,Low,7,Low,2022,Summer,Facility2,Batavia,Raw,Door,0.37,0,0,Ambient/Warm (~75-80),Dry,Standard (30-60),Weekly,3,Dry
+sample-289,B.05B.1,0,Low,Low,1,Low,2022,Summer,Facility2,Batavia,Raw,Door,0,0,0,Ambient/Warm (~75-80),Dry,Standard (30-60),Weekly,3,Dry
+sample-37,B.06.2,1.06,Low,Medium,70,Medium,2022,Fall,Facility2,Batavia,Raw,Floor,1.06,0,0,Ambient (~70-75),Dry,no data,as needed,3,Dry
+sample-291,B.08A.1,0,Low,Low,1,Low,2022,Summer,Facility2,Batavia,Raw,Floor,0,0,0,Ambient/Warm (~75-80),Dry,no data,No information,3,Dry
+sample-2,B.12.3,1.4,Low,Medium,33,Low,2023,Winter,Facility2,Batavia,Raw,Door,1.4,0,0,Ambient (~70-75),Wet,Standard (30-60),Weekly,3,Wet
+sample-3,B.13.2,2.14,High,Medium,113,High,2022,Fall,Facility2,Batavia,Post-Pasteurization,Floor,2.14,6500000,6.81,Ambient (~70-75),Dry,Standard/Dry(0-30),None,3,Dry
+sample-253,B.13A.1,0,Medium,Low,1,Low,2022,Summer,Facility2,Batavia,Post-Pasteurization,Floor,0,1050,3.02,Ambient (~70-75),Dry,Standard/Dry(0-30),None,3,Dry
+sample-254,B.13B.1,1,High,Medium,17,Low,2022,Summer,Facility2,Batavia,Post-Pasteurization,Floor,1,1.00E+05,5,Ambient (~70-75),Dry,Standard/Dry(0-30),None,3,Dry
+sample-6,B.16.2,1.61,Medium,Medium,69,Medium,2022,Fall,Facility2,Batavia,Filling,Wall/Ceiling,1.61,3150,3.5,Ambient (~70-75),Damp,Standard (30-60),Weekly,3,Wet
+sample-7,B.16.4,1.33,Medium,Medium,63,Medium,2023,Spring,Facility2,Batavia,Filling,Wall/Ceiling,1.33,1200,3.08,Cool (~60-68),Wet,Standard (30-60),Weekly,3,Wet
+sample-258,B.16A.1,0.15,Medium,Low,12,Low,2022,Summer,Facility2,Batavia,Filling,Wall/Ceiling,0.15,1400,3.15,Ambient (~70-75),Damp,Standard (30-60),Weekly,3,Wet
+sample-259,B.16B.1,0.33,Low,Low,23,Low,2022,Summer,Facility2,Batavia,Filling,Wall/Ceiling,0.33,700,2.85,Ambient (~70-75),Damp,Standard (30-60),Weekly,3,Wet
+sample-11,B.18.4,1.31,Medium,Medium,43,Low,2023,Spring,Facility2,Batavia,Filling,Wall/Ceiling,1.31,9600,3.98,Cool (~60-68),Dry,Standard (30-60),Weekly,3,Dry
+sample-262,B.18A.1,0.32,High,Low,18,Low,2022,Summer,Facility2,Batavia,Filling,Wall/Ceiling,0.32,8.00E+06,6.9,Ambient (~70-75),Dry,Standard (30-60),Weekly,3,Dry
+sample-16,B.25.2,2.96,Low,High,83,Medium,2022,Fall,Facility2,Batavia,Warehouse,Fan/Vent,2.96,150,2.18,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-17,B.25.4,3.37,Medium,High,176,High,2023,Spring,Facility2,Batavia,Warehouse,Fan/Vent,3.37,2800,3.45,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-268,B.25B.1,0.65,Low,Low,2,Low,2022,Summer,Facility2,Batavia,Warehouse,Fan/Vent,0.65,300,2.48,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-18,B.26.2,1.65,Medium,Medium,105,High,2022,Fall,Facility2,Batavia,Warehouse,Door,1.65,2450,3.39,Cool (~60-68),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-19,B.26.4,3.98,Low,High,155,High,2023,Spring,Facility2,Batavia,Warehouse,Door,3.98,400,2.6,Cool (~60-68),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-269,B.26A.1,2.46,Medium,Medium,110,High,2022,Summer,Facility2,Batavia,Warehouse,Door,2.46,4800,3.68,Cool (~60-68),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-270,B.26B.1,0,Low,Low,1,Low,2022,Summer,Facility2,Batavia,Warehouse,Door,0,850,2.93,Cool (~60-68),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-23,B.28.2,3.17,Medium,High,131,High,2022,Fall,Facility2,Batavia,Warehouse,Floor,3.17,1900,3.28,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-24,B.28.4,3.32,Medium,High,115,High,2023,Spring,Facility2,Batavia,Warehouse,Floor,3.32,4400,3.64,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-273,B.28A.1,2.59,Low,High,83,Medium,2022,Summer,Facility2,Batavia,Warehouse,Floor,2.59,450,2.65,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-274,B.28B.1,0,Low,Low,0,Low,2022,Summer,Facility2,Batavia,Warehouse,Floor,0,850,2.93,Cool (~60-68),Dry,Standard/Dry(0-30),as needed,3,Dry
+sample-31,B.33.2,1.3,High,Medium,42,Low,2022,Fall,Facility2,Batavia,Warehouse,Door,1.3,105000,5.02,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-32,B.33.4,2.96,Low,High,142,High,2023,Spring,Facility2,Batavia,Warehouse,Door,2.96,800,2.9,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-282,B.33A.1,2.25,Low,Medium,29,Low,2022,Summer,Facility2,Batavia,Warehouse,Door,2.25,0,0,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-283,B.33B.1,2.36,Medium,Medium,30,Low,2022,Summer,Facility2,Batavia,Warehouse,Door,2.36,5000,3.7,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-64,B.E5.2,2.71,Medium,High,88,Medium,2022,Fall,Facility2,Batavia,Warehouse,Door,2.71,1900,3.28,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-43,B.E5.4,3.51,Medium,High,118,High,2023,Spring,Facility2,Batavia,Warehouse,Door,3.51,6000,3.78,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-71,B.E7.2,3.36,Low,High,87,Medium,2022,Fall,Facility2,Batavia,Warehouse,Floor,3.36,200,2.3,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-292,NL.01.1,2.01,Medium,Medium,21,Low,2022,Summer,Facility3,North Lawrence,Raw,Floor,2.01,1500,3.18,Ambient (~70-75),Dry,Humid(60-80),Weekly,3,Dry
+sample-78,NL.01.2,1.39,Medium,Medium,65,Medium,2022,Fall,Facility3,North Lawrence,Raw,Floor,1.39,36600,4.56,Ambient (~70-75),Dry,Humid(60-80),Weekly,3,Dry
+sample-80,NL.01.3,1.31,High,Medium,34,Low,2023,Winter,Facility3,North Lawrence,Raw,Floor,1.31,253000,5.4,Cool (~60-68),Dry,Humid(60-80),Weekly,3,Dry
+sample-79,NL.01.4,0.35,Medium,Low,49,Low,2023,Spring,Facility3,North Lawrence,Raw,Floor,0.35,5600,3.75,Cool (~60-68),Dry,Humid(60-80),Weekly,3,Dry
+sample-135,NL.05.4,2.59,Medium,High,139,High,2023,Spring,Facility3,North Lawrence,Warehouse,Floor,2.59,2800,3.45,Cool (~60-68),Dry,Humid(60-80),None,3,Dry
+sample-325,NL.07.1,2.18,Low,Medium,62,Medium,2022,Summer,Facility3,North Lawrence,Warehouse,Door,2.18,0,0,Ambient/Warm (~75-80),Dry,Humid(60-80),None,3,Dry
+sample-149,NL.07.2,0.61,Low,Low,47,Low,2022,Fall,Facility3,North Lawrence,Warehouse,Door,0.61,0,0,Ambient (~70-75),Dry,Humid(60-80),None,3,Dry
+sample-151,NL.07.3,2.58,Medium,High,94,Medium,2023,Winter,Facility3,North Lawrence,Warehouse,Door,2.58,11200,4.05,Cool (~60-68),Dry,Humid(60-80),None,3,Dry
+sample-150,NL.07.4,2.1,Low,Medium,87,Medium,2023,Spring,Facility3,North Lawrence,Warehouse,Door,2.1,800,2.9,Cool (~60-68),Dry,Humid(60-80),None,3,Dry
+sample-326,NL.08.1,1.4,High,Medium,57,Medium,2022,Summer,Facility3,North Lawrence,Post-Pasteurization,Floor,1.4,1.88E+08,8.27,Ambient (~70-75),Damp,Very Humid(>80),None,3,Wet
+sample-152,NL.08.2,0.35,Low,Low,49,Low,2022,Fall,Facility3,North Lawrence,Post-Pasteurization,Floor,0.35,0,0,warm (~80-90),Dry,Very Humid(>80),None,3,Dry
+sample-153,NL.08.4,0.87,Medium,Low,51,Medium,2023,Spring,Facility3,North Lawrence,Post-Pasteurization,Floor,0.87,10800,4.03,Ambient (~70-75),Dry,Very Humid(>80),None,3,Dry
+sample-293,NL.10.1,0.31,High,Low,32,Low,2022,Summer,Facility3,North Lawrence,Post-Pasteurization,Wall/Ceiling,0.31,315000,5.5,Ambient (~70-75),Wet,Very Humid(>80),None,3,Wet
+sample-81,NL.10.2,0.5,Low,Low,29,Low,2022,Fall,Facility3,North Lawrence,Post-Pasteurization,Wall/Ceiling,0.5,0,0,warm (~80-90),Wet,Very Humid(>80),None,3,Wet
+sample-83,NL.10.3,0.58,Medium,Low,19,Low,2023,Winter,Facility3,North Lawrence,Post-Pasteurization,Wall/Ceiling,0.58,5600,3.75,no data,Dry,Very Humid(>80),None,3,Dry
+sample-82,NL.10.4,2.4,Medium,Medium,47,Low,2023,Spring,Facility3,North Lawrence,Post-Pasteurization,Wall/Ceiling,2.4,1200,3.08,Ambient (~70-75),Dry,Very Humid(>80),None,3,Dry
+sample-295,NL.14.1,2.18,Medium,Medium,47,Low,2022,Summer,Facility3,North Lawrence,Post-Pasteurization,Floor,2.18,18800,4.27,Ambient (~70-75),Wet,Standard (30-60),None,3,Wet
+sample-91,NL.14.2,2.33,Low,Medium,93,Medium,2022,Fall,Facility3,North Lawrence,Post-Pasteurization,Floor,2.33,450,2.65,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-92,NL.14.4,0.95,High,Low,79,Medium,2023,Spring,Facility3,North Lawrence,Post-Pasteurization,Floor,0.95,5.60E+07,7.75,Cool (~60-68),Dry,Standard (30-60),None,3,Dry
+sample-296,NL.15.1,1.81,Medium,Medium,40,Low,2022,Summer,Facility3,North Lawrence,Post-Pasteurization,Floor,1.81,10600,4.03,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-93,NL.15.4,2.81,Low,High,119,High,2023,Spring,Facility3,North Lawrence,Post-Pasteurization,Floor,2.81,0,0,Cool (~60-68),Dry,Standard (30-60),None,3,Dry
+sample-299,NL.20.1,0.61,High,Low,13,Low,2022,Summer,Facility3,North Lawrence,Post-Pasteurization,Wall/Ceiling,0.61,1.50E+07,7.18,Cool (~60-68),Dry,Humid(60-80),No information,3,Dry
+sample-308,NL.31.1,0.89,Medium,Low,20,Low,2022,Summer,Facility3,North Lawrence,Filling,Door,0.89,3500,3.54,Ambient/Warm (~75-80),Damp,Standard (30-60),No information,3,Wet
+sample-310,NL.33.1,0,Low,Low,1,Low,2022,Summer,Facility3,North Lawrence,Filling,Door,0,300,2.48,Ambient/Warm (~75-80),Damp,Standard (30-60),None,3,Wet
+sample-311,NL.35.1,2.37,High,Medium,59,Medium,2022,Summer,Facility3,North Lawrence,Warehouse,Door,2.37,1.57E+08,8.2,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-110,NL.35.2,1.1,Low,Medium,48,Low,2022,Fall,Facility3,North Lawrence,Warehouse,Door,1.1,0,0,Cold(~55-40),Wet,Standard/Dry(0-30),None,3,Wet
+sample-321,NL.48.1,0.41,Medium,Low,2,Low,2022,Summer,Facility3,North Lawrence,Filling,Door,0.41,1400,3.15,Ambient/Warm (~75-80),Dry,no data,No information,3,Dry
+sample-133,NL.48.2,2.27,Low,Medium,68,Medium,2022,Fall,Facility3,North Lawrence,Filling,Door,2.27,0,0,Ambient/Warm (~75-80),Dry,no data,No information,3,Dry
+sample-323,NL.50.1,3.25,Low,High,91,Medium,2022,Summer,Facility3,North Lawrence,Warehouse,Floor,3.25,800,2.9,Cold(~55-40),Wet,Standard/Dry(0-30),Daily,3,Wet
+sample-137,NL.50.2,3.58,Low,High,108,High,2022,Fall,Facility3,North Lawrence,Warehouse,Floor,3.58,150,2.18,Cold(~55-40),Wet,Standard/Dry(0-30),Daily,3,Wet
+sample-139,NL.50.3,3.55,Low,High,115,High,2023,Winter,Facility3,North Lawrence,Warehouse,Floor,3.55,0,0,Cold(~55-40),Wet,Standard/Dry(0-30),Daily,3,Wet
+sample-138,NL.50.4,2.93,Medium,High,62,Medium,2023,Spring,Facility3,North Lawrence,Warehouse,Floor,2.93,38000,4.58,Cold(~55-40),Wet,Standard/Dry(0-30),Daily,3,Wet
+sample-140,NL.51.2,1.56,Medium,Medium,25,Low,2022,Fall,Facility3,North Lawrence,Warehouse,Fan/Vent,1.56,4000,3.6,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-142,NL.51.3,1.81,Medium,Medium,25,Low,2023,Winter,Facility3,North Lawrence,Warehouse,Fan/Vent,1.81,38400,4.58,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-141,NL.51.4,1.62,Medium,Medium,41,Low,2023,Spring,Facility3,North Lawrence,Warehouse,Fan/Vent,1.62,8000,3.9,Cold(~55-40),Dry,Standard/Dry(0-30),None,3,Dry
+sample-50,NL.E13.3,1.37,High,Medium,95,Medium,2023,Winter,Facility3,North Lawrence,Filling,Floor,1.37,680000,5.83,no data,Wet,Standard/Dry(0-30),No information,3,Wet
+sample-74,NL.E8.2,2.06,High,Medium,57,Medium,2022,Fall,Facility3,North Lawrence,Warehouse,Wall/Ceiling,2.06,220000,5.34,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-75,NL.E8.3,2.74,Medium,High,142,High,2023,Winter,Facility3,North Lawrence,Warehouse,Wall/Ceiling,2.74,62000,4.79,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-158,NL.E8.4,1.69,High,Medium,71,Medium,2023,Spring,Facility3,North Lawrence,Warehouse,Wall/Ceiling,1.69,129000,5.11,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-76,NL.E9.2,0.92,Medium,Low,15,Low,2022,Fall,Facility3,North Lawrence,Warehouse,Floor,0.92,70000,4.85,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-77,NL.E9.3,1.94,Medium,Medium,51,Medium,2023,Winter,Facility3,North Lawrence,Warehouse,Floor,1.94,48000,4.68,no data,Dry,Standard/Dry(0-30),No information,3,Dry
+sample-159,NL.E9.4,2.33,High,Medium,47,Low,2023,Spring,Facility3,North Lawrence,Warehouse,Floor,2.33,153000,5.18,Cold(~55-40),Dry,Standard/Dry(0-30),No information,3,Dry
+sample-353,WS.07.1,0,Low,Low,0,Low,2022,Summer,Facility1,West Senecca,Warehouse,Door,0,0,0,Ambient/Warm (~75-80),Dry,Standard (30-60),No information,3,Dry
+sample-329,WS.12.1,0.68,Low,Low,3,Low,2022,Summer,Facility1,West Senecca,Raw,Fan/Vent,0.68,200,2.3,Ambient/Warm (~75-80),Dry,Standard (30-60),None,2,Dry
+sample-163,WS.12.2,2.12,Low,Medium,55,Medium,2022,Fall,Facility1,West Senecca,Raw,Fan/Vent,2.12,0,0,Ambient (~70-75),Dry,Standard (30-60),None,2,Dry
+sample-164,WS.12.3,2.96,Low,High,64,Medium,2023,Winter,Facility1,West Senecca,Raw,Fan/Vent,2.96,0,0,no data,Dry,Standard (30-60),None,2,Dry
+sample-331,WS.14.1,0,Medium,Low,0,Low,2022,Summer,Facility1,West Senecca,Warehouse,Floor,0,18800,4.27,Cold(~55-40),Dry,no data,None,3,Dry
+sample-165,WS.14.2,1.47,Medium,Medium,88,Medium,2022,Fall,Facility1,West Senecca,Warehouse,Floor,1.47,10700,4.03,Cold(~55-40),Dry,Very Humid(>80),None,3,Dry
+sample-167,WS.14.3,1.44,Low,Medium,35,Low,2023,Winter,Facility1,West Senecca,Warehouse,Floor,1.44,0,0,no data,Dry,Humid(60-80),None,3,Dry
+sample-166,WS.14.4,0.82,Medium,Low,32,Low,2023,Spring,Facility1,West Senecca,Warehouse,Floor,0.82,53200,4.73,Cold(~55-40),Dry,Very Humid(>80),None,3,Dry
+sample-332,WS.16.1,0,Medium,Low,0,Low,2022,Summer,Facility1,West Senecca,Warehouse,Floor,0,2300,3.36,Cold(~55-40),Dry,Humid(60-80),Weekly,3,Dry
+sample-170,WS.16.2,1.59,Medium,Medium,82,Medium,2022,Fall,Facility1,West Senecca,Warehouse,Floor,1.59,95000,4.98,Cold(~55-40),Wet,Very Humid(>80),Weekly,3,Wet
+sample-172,WS.16.3,0.47,Medium,Low,19,Low,2023,Winter,Facility1,West Senecca,Warehouse,Floor,0.47,3600,3.56,no data,Wet,Humid(60-80),Weekly,3,Wet
+sample-171,WS.16.4,1.29,Medium,Medium,12,Low,2023,Spring,Facility1,West Senecca,Warehouse,Floor,1.29,4000,3.6,Cold(~55-40),Dry,Very Humid(>80),Weekly,3,Dry
+sample-175,WS.18.2,1.04,Medium,Medium,52,Medium,2022,Fall,Facility1,West Senecca,Warehouse,Wall/Ceiling,1.04,46200,4.66,Cold(~55-40),Dry,Very Humid(>80),None,3,Dry
+sample-177,WS.18.3,0.77,High,Low,57,Medium,2023,Winter,Facility1,West Senecca,Warehouse,Wall/Ceiling,0.77,2960000,6.47,no data,Dry,Humid(60-80),None,3,Dry
+sample-176,WS.18.4,0.71,High,Low,30,Low,2023,Spring,Facility1,West Senecca,Warehouse,Wall/Ceiling,0.71,2360000,6.37,Cold(~55-40),Dry,Very Humid(>80),None,3,Dry
+sample-334,WS.21.1,0,Medium,Low,3,Low,2022,Summer,Facility1,West Senecca,Post-Pasteurization,Door,0,1450,3.16,Ambient/Warm (~75-80),Wet,Humid(60-80),Continuous,3,Wet
+sample-181,WS.21.3,3.24,Low,High,66,Medium,2023,Winter,Facility1,West Senecca,Post-Pasteurization,Door,3.24,0,0,no data,Damp,Standard (30-60),Continuous,3,Wet
+sample-335,WS.24.1,0.01,Medium,Low,2,Low,2022,Summer,Facility1,West Senecca,Post-Pasteurization,Floor,0.01,1450,3.16,Ambient/Warm (~75-80),Dry,Standard (30-60),None,3,Dry
+sample-185,WS.24.2,1.91,Low,Medium,53,Medium,2022,Fall,Facility1,West Senecca,Post-Pasteurization,Floor,1.91,0,0,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-187,WS.24.3,2.2,Low,Medium,56,Medium,2023,Winter,Facility1,West Senecca,Post-Pasteurization,Floor,2.2,0,0,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-186,WS.24.4,2.46,Low,Medium,97,Medium,2023,Spring,Facility1,West Senecca,Post-Pasteurization,Floor,2.46,0,0,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-338,WS.29.1,1.65,High,Medium,72,Medium,2022,Summer,Facility1,West Senecca,Post-Pasteurization,Floor,1.65,185000,5.27,Ambient/Warm (~75-80),Wet,Standard (30-60),as needed,3,Wet
+sample-193,WS.29.3,0.54,Medium,Low,28,Low,2023,Winter,Facility1,West Senecca,Post-Pasteurization,Floor,0.54,6000,3.78,no data,Wet,Standard (30-60),as needed,3,Wet
+sample-341,WS.36.1,1.03,High,Medium,23,Low,2022,Summer,Facility1,West Senecca,Post-Pasteurization,Wall/Ceiling,1.03,4.50E+07,7.65,Ambient/Warm (~75-80),Dry,Standard (30-60),None,3,Dry
+sample-201,WS.36.2,0.31,Medium,Low,42,Low,2022,Fall,Facility1,West Senecca,Post-Pasteurization,Wall/Ceiling,0.31,50000,4.7,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-202,WS.36.4,1.08,High,Medium,31,Low,2023,Spring,Facility1,West Senecca,Post-Pasteurization,Wall/Ceiling,1.08,132000,5.12,Ambient (~70-75),Dry,Standard (30-60),None,3,Dry
+sample-219,WS.44.4,2.68,Medium,High,38,Low,2023,Spring,Facility1,West Senecca,Filling,Floor,2.68,6800,3.83,Cool (~60-68),Damp,Standard (30-60),None,3,Wet
+sample-346,WS.47.1,0,Low,Low,0,Low,2022,Summer,Facility1,West Senecca,Warehouse,Door,0,300,2.48,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-224,WS.47.2,3.84,Low,High,173,High,2022,Fall,Facility1,West Senecca,Warehouse,Door,3.84,0,0,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-226,WS.47.3,3.29,Low,High,129,High,2023,Winter,Facility1,West Senecca,Warehouse,Door,3.29,400,2.6,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-225,WS.47.4,2.91,Low,High,121,High,2023,Spring,Facility1,West Senecca,Warehouse,Door,2.91,0,0,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-347,WS.48.1,0,Medium,Low,0,Low,2022,Summer,Facility1,West Senecca,Warehouse,Door,0,1400,3.15,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-227,WS.48.2,3.57,Low,High,122,High,2022,Fall,Facility1,West Senecca,Warehouse,Door,3.57,600,2.78,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-229,WS.48.3,3.46,Medium,High,143,High,2023,Winter,Facility1,West Senecca,Warehouse,Door,3.46,1200,3.08,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-228,WS.48.4,2.94,Medium,High,102,High,2023,Spring,Facility1,West Senecca,Warehouse,Door,2.94,1600,3.2,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-348,WS.49.1,1.22,Medium,Medium,16,Low,2022,Summer,Facility1,West Senecca,Warehouse,Fan/Vent,1.22,1750,3.24,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-230,WS.49.2,2.41,Low,Medium,76,Medium,2022,Fall,Facility1,West Senecca,Warehouse,Fan/Vent,2.41,600,2.78,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-232,WS.49.3,2.81,Low,High,126,High,2023,Winter,Facility1,West Senecca,Warehouse,Fan/Vent,2.81,800,2.9,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-231,WS.49.4,2.4,Medium,Medium,99,Medium,2023,Spring,Facility1,West Senecca,Warehouse,Fan/Vent,2.4,3200,3.51,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-350,WS.50.1,0,Low,Low,1,Low,2022,Summer,Facility1,West Senecca,Warehouse,Fan/Vent,0,800,2.9,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-236,WS.50.3,2.76,Low,High,115,High,2023,Winter,Facility1,West Senecca,Warehouse,Fan/Vent,2.76,0,0,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-235,WS.50.4,3.17,Low,High,114,High,2023,Spring,Facility1,West Senecca,Warehouse,Fan/Vent,3.17,400,2.6,Hot(106.5),Dry,Standard/Dry(0-30),None,3,Dry
+sample-72,WS.E7.3,1.24,High,Medium,62,Medium,2023,Winter,Facility1,West Senecca,Raw,Floor,1.24,3600000,6.56,Cool (~60-68),Dry,Standard (30-60),No information,3,Dry
+sample-251,WS.E7.4,1.87,High,Medium,80,Medium,2023,Spring,Facility1,West Senecca,Raw,Floor,1.87,11800000,7.07,Cool (~60-68),Damp,Standard (30-60),No information,3,Wet

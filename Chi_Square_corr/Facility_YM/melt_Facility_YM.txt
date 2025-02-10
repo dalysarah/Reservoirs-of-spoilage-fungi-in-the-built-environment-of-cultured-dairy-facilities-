@@ -1,0 +1,4 @@
+Facility	High	Medium	Low
+Facility1	7	18	19
+Facility2	4	13	16
+Facility3	10	19	13

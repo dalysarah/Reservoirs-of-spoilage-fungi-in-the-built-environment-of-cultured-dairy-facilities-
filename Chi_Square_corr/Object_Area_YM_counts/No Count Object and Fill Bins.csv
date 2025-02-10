@@ -1,0 +1,14 @@
+Object_Area,High,Medium,Low
+Door-Filling,0,2,2
+Door-Post-Pasteurization,0,1,1
+Door-Raw,0,0,4
+Door-Warehouse,2,9,14
+Fan/Vent-Raw,0,0,3
+Fan/Vent-Warehouse,0,6,7
+Floor-Filling,1,1,0
+Floor-Post-Pasteurization,5,6,6
+Floor-Raw,3,3,2
+Floor-Warehouse,1,13,7
+Wall/Ceiling-Filling,1,4,1
+Wall/Ceiling-Post-Pasteurization,4,3,1
+Wall/Ceiling-Warehouse,4,2,0

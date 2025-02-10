@@ -1,0 +1,83 @@
+---
+title: "Chi Square correlation ITS data"
+author: "Sarah Daly"
+date: "2024-07-30"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+Purpose:  Generate figure of Chi Square Correlation test of Environmental Sampling Data; Generate p-value; Find percent agreement of samples
+
+Input Files:  
+Final_Combined_Metadata.csv
+melt.txt
+
+#Set WD and load data
+```{r}
+setwd("C:/Users/dalys/Box/Microbial Food Safety & Spoilage Lab/Lab Members/Sarah Daly/ITS Methods Project/Github upload/Chi_Square_corr")
+```
+
+#load libraries 
+```{r}
+library(dplyr)
+library(tidyr) 
+```
+
+#Load and Filter data
+```{r}
+df<- read.csv("BE_meta.csv" , na.strings="NA")
+
+df$Object_Area<- paste(df$Object, df$Production.Area, sep= "-")
+head(df)
+```
+
+
+#Sort Data by Object and Fill Bins
+```{r}
+#change these input variables (Var1, Var2)
+d<- df %>% group_by(Facility, Sant) %>%
+    summarise(n = n())   #Get number of samples in each group
+d = as.data.frame(d) #Convert to data frame 
+d
+library(reshape)  #Change ~ values
+meltd<- cast(d, Facility~Sant, value.var="n")  #change these vars (Var1 ~Var2) to match d
+meltd
+
+#Write to .csv
+write.csv(meltd, "No Count Object and Fill Bins.csv") #Transform these results to "melt.txt"
+
+#Import File--Manually transform data in excel from "d"--Delete first columna and reorder as you want
+#Resave as text file
+mf <- read.delim("melt.txt", row.names = 1)
+
+#Compute chi-square test in R
+#Chi-square statistic can be easily computed using the function chisq.test() as follow:
+head(mf)
+chisq <- chisq.test(mf)
+chisq # row and the column variables are statistically significantly associated (p-value = 0)
+
+capture.output(chisq , file=paste("Chi Square statistic category and type.txt"))
+
+# Observed counts
+chisq$observed
+library(devtools)
+
+#devtools::install_github("ebbertd/chisq.posthoc.test")
+library(chisq.posthoc.test)
+write.csv(chisq$stdres, "chisqcorr.csv")
+#chisq.posthoc.test(mf, method= NULL, alpha=0.05)
+
+library(corrplot)
+corrplot(chisq$residuals, is.cor = FALSE,tl.col="black",tl.cex=1.5, cl.cex=1.5,tl.offset = 1,cl.pos="r", cl.ratio = 0.2, cl.align.text = 'l', addgrid.col = "black")
+
+
+#Positive residuals are in blue. Positive values in cells specify an attraction (positive association) between the corresponding row and column variables
+tiff(paste("Chi corrPlot-Large font.tif", sep=" "), res=300, compression = "lzw", height=9, width=10, units="in")
+print(corrplot(chisq$residuals, is.cor = FALSE,tl.col="black",tl.cex=1.5, cl.cex=1.5,tl.offset = 1,cl.pos="r", cl.ratio = 0.2, cl.align.text = 'l', addgrid.col = "black"))
+dev.off()
+
+pdf(paste("Chi corrPlot-Large font.pdf", sep=" "))
+print(corrplot(chisq$residuals, is.cor = FALSE,tl.col="black",tl.cex=1.5, cl.cex=1.5,tl.offset = 1,cl.pos="r", cl.ratio = 0.2, cl.align.text = 'l', addgrid.col = "black"))
+dev.off()
+```
