@@ -1,0 +1,652 @@
+---
+title: "ITS workflow-PCOAs"
+author: "Sarah Daly"
+date: '2024-07-30'
+output:
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+Input:
+OTU table (.qza), unfiltered taxonomy table (.qza), rooted photogenic tree (.qza), metadata file (.txt)
+Output
+.csv and .tif 
+
+All Sequencing Samples Summer Fall Winter Spring
+
+Results focus on Fan/Walls/doors/floors 
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/Box/Microbial Food Safety & Spoilage Lab/Lab Members/Sarah Daly/ITS Methods Project/Github upload/PCOA_beta_permanova")
+
+list.files()
+```
+
+#Load Packages
+There will be errors/warnings when you load packages but most you can ignore 
+```{r}
+library(scales)
+
+library(DECIPHER) # This package will help in importing, maintaining, analyzing, manipulating, and exporting a massive amount of sequences.
+
+library(ape) # Analyses of Phylogenetics and Evolution package. Required for tree calculations to be used with phyloseq
+
+library(DESeq2) # This package will help analyze "differential expression" in the microbiota alongside phyloseq
+
+library(ggplot2) # Graphing package used in phyloseq. To edit the default setting of a plot, you need to use functions in this package.
+
+library(phyloseq) # The phyloseq package seeks to address issues with multiple microbiome analysis packages by providing a set of functions that internally manage the organizing, linking, storing, and analyzing of phylogenetic sequencing data. In general, this package is used for UniFrac analyses.
+
+library(plotly) # A package to create interactive web graphics of use in 3D plots
+
+library(vegan) # The vegan package provides tools for descriptive community ecology. It has most basic functions of diversity analysis, community ordination and dissimilarity analysis. In general, this package is used for Bray-Curtis and Jaccard analyses.
+
+library(tidyverse) # This package is designed to make it easy to install and load multiple 'tidyverse' packages in a single step
+
+library(adespatial) # Tools for the multiscale spatial analysis of multivariate data
+
+library(devtools) # Make package development easier by providing R functions that simplify and expedite common tasks
+
+library(qiime2R) # A package for importing qiime artifacts into an R session
+
+library(microbiome) # Data analysis and visualization
+
+library(microbiomeSeq) # Data analysis and visualization
+
+library("pander") # provide a minimal and easy tool for rendering R objects into Pandoc's markdown
+
+library(ranacapa) # Data analysis 
+
+library(grid) # support data visualization
+
+library(gridExtra)  # support data visualization
+
+library(knitr) # Provides a general-purpose tool for dynamic report generation in R using Literate Programming techniques.
+
+library(png) # Figure download
+
+library("ggdendro") #set of tools for dendrograms and tree plots using 'ggplot2'
+
+library(ggpubr) # publication quality figures, based on ggplot2
+
+library(RColorBrewer) # nice color options
+
+library(microbiomeutilities) # some utility tools 
+
+library(broom) #tidy anova tables 
+library(hrbrthemes)
+library(gcookbook)
+library(tidyverse)
+library(dplyr)
+```
+
+#Create a vector of colors for plotting
+```{r}
+nice_colors = c("#999999", "#E69F00", "#56B4E9","#e98756","firebrick3","#5800e6", "#CDDC49", "#C475D3", 
+                "#E94B30", "#233F57", "#FEE659", "#A1CFDD", "#F4755E", "#D6F6F7","blueviolet", "#6898BF","cornsilk",  "tan3", "violetred4", "seashell3", "forestgreen", "grey60", "hotpink", "darkgreen", "dodgerblue3", "gold", "springgreen", "slateblue2", "darkolivegreen", "deeppink4", "gray16", "white", "yellow", "red", "tan", "slategray3", "wheat", "thistle4", "peachpuff", "plum", "orangered", "mediumseagreen", "hotpink4", "goldenrod3", "ivory", "darkturquoise", "lightgoldenrod", "violet", "firebrick", "mistyrose2", "brown", "rosybrown", "royalblue", "orange", "blue", "hotpink2", "tan4", "plum2", "grey40", "firebrick4", "violet", "brown4", "ivory2", "seashell4")
+                
+#ASsign colors to factors
+color_factor<- c("Summer" = "firebrick",
+"Fall" =          "gold"  ,
+"Winter" =            "dodgerblue" ,  
+"Spring" =          "plum" ,
+ "Raw" =           "coral"  ,     
+ "Filling" =           "darkseagreen",
+ "Post-Pasteurization" = "darkorchid",
+"Post-Pasteurization " = "darkorchid",
+"Warehouse"= "burlywood",
+"Wall/Ceiling" = "mediumaquamarine",
+"Door" = "grey",
+"Fan/Vent" = "lightgoldenrod",
+"Floor" = "hotpink",
+"Floor Object" = "hotpink")
+ 
+```
+
+
+#Load Data and Convert to Phyloseq Object
+```{r}
+#Convert qiime artifacts directly to phyloseq
+#phyloseq provides a set of classes and tools to facilitate the import, storage, analysis, and graphical display of microbiome census data.
+
+#List files
+list.files()
+
+#Importing OTU/ASV table
+ASVS <- read_qza("q20/otu-table-dn-99-SFWS-q20.qza")   #Qiime output ASV file after filtering
+dim(ASVS$data)
+
+# Importing phylogenic tree
+tree <- read_qza("q20/rooted_tree.qza")  #Qiime output file
+tree$data
+
+# Importing taxonomy assignment 
+taxonomy <- read_qza("q20/unite-dyn-11-22-ITS-taxonomy-otu.qza")  #Qiime output file
+
+#Process taxonomy file more 
+#get taxonomy names
+tax_strings<- strsplit(as.character(taxonomy$data$Taxon), ";")
+head(tax_strings)
+
+#some strings are missing levels (blanks) and the dataframe will not bind
+x = 1
+y = 1
+
+blanks <- c("k__","p__", "c__", "o__","f__", "g__", "s__")
+
+num_taxa = length(tax_strings)  #number of taxa
+num_taxa  #shoudl match dim OTUs$data
+
+for (item in tax_strings){
+  
+  t = length(tax_strings[[x]]) #get list item length
+  
+if (t < 7)  {  #if less than 7 elements in each list item
+  #print(t)
+  y=1
+  #print(taxa)
+  while (y <= 7){  #loop through each item in item 
+    if (is.na(tax_strings[[x]][y])){
+      print('needs')
+      tax_strings[[x]][y] = blanks[y]  #replace blank space with corr level character
+      y=y+1
+      }
+      else(y=y+1)
+    }
+x = x+1
+}
+  else (x = x+ 1)
+}
+
+#convert to dataframe
+tax_table<-as.data.frame(tax_strings)
+dim(tax_table)
+#Trasnpose table
+tax_table<-t(tax_table)
+head(tax_table)
+
+#Add level labels
+#Add oto/asv info to tax table
+rownames(tax_table) <- taxonomy$data$Feature.ID
+colnames(tax_table) <- c("Kingdom","Phylum","Class","Order","Family","Genus","Species")
+head(tax_table)
+#Inspect table 
+write.csv(tax_table, "merged_tax_table.csv")
+
+#################Creating phyloseq object#######################################
+
+#Note, phyloseq uses the term "OTU" loosely and since we fed it an ASV table, it is an ASV table
+OTU = otu_table(as.matrix(ASVS$data), taxa_are_rows = T)
+#Transpose OtU table
+otu_table(OTU)<-t(otu_table(OTU))  #may need to do this again
+
+TAX = tax_table(as.matrix(tax_table))
+dim(TAX)
+dim(taxa_names(OTU))
+head(TAX)
+
+# Importing metadata
+metadata <- read.table("q20/Metadata_ITS2.txt", sep='\t', header=T, row.names=1, comment="")
+head(metadata)
+dim(metadata)
+length(sample_names(OTU))
+SAMPLE = sample_data(metadata)
+
+#phylogentic tree
+TREE = tree$data
+
+#Inspect files for troubleshooting 
+write.csv(SAMPLE, "phyloseq SAMPLE input.csv")
+write.csv(TAX, "phyloseq TAX input.csv")
+write.csv(OTU, "phyloseq OTU input.csv")
+
+# merge the data
+ps <- phyloseq(OTU, TAX, SAMPLE,TREE)
+#contains OTU table, taxonomy table, sample data, and phy tree
+#check that dimensions are consistent (same number taxa setwd("..")
+#getwd()between OTU, tax_table)
+ps
+#######################Summary stats from phyloseq object########################
+#Summarizing the phyloseq object to check for feature of data
+# check for features of data  
+summarize_phyloseq(ps)
+print_ps(ps)
+head(sample_data(ps))
+
+
+unique((sample_data(ps))$Freq_cat)
+
+sample_data(ps)$Frequency<-replace(sample_data(ps)$Freq_cat, sample_data(ps)$Freq_cat=="None", "None/as needed")
+
+sample_data(ps)$Frequency<-replace(sample_data(ps)$Freq_cat, sample_data(ps)$Freq_cat=="As needed", "None/as needed")
+
+unique((sample_data(ps))$Freq_cat)
+
+
+```
+
+#Filter Phyloseq Object for missing or Low Abundance Genera
+https://github.com/joey711/phyloseq/issues/1483 
+```{r}
+#####################################################
+# Creating a table for number of features for each phyla
+table(tax_table(ps)[, "Genus"], exclude = NULL)
+
+# Removing the NAs and uncharacterized Phylums
+ps0 <- subset_taxa(ps, !is.na(Genus) & !Genus %in% c("", "g__"))#Remove unidentified genera
+
+# Summary Before and After
+ps
+ps0
+
+# Compute prevalence of each feature, store as data.frame
+prevdf = apply(X = otu_table(ps0),
+               MARGIN = ifelse(taxa_are_rows(ps0), yes = 1, no = 2),
+               FUN = function(x){sum(x > 0)})
+
+# Add taxonomy and total read counts to this data.frame
+prevdf = data.frame(Prevalence = prevdf,
+                    TotalAbundance = taxa_sums(ps0),
+                    tax_table(ps0))
+# Viewing
+head(prevdf)
+# Computing average and total prevalence
+temp_df <- plyr::ddply(prevdf, "Genus", function(df1){cbind(mean(df1$Prevalence),sum(df1$Prevalence))})
+
+newdata<- temp_df
+colnames(newdata) <- c("Genus", "mean","sum_total")
+head(newdata)
+
+newdata<- newdata%>% arrange(desc(sum_total))
+head(newdata)
+
+write.csv(newdata, "Prevlance_Genus.csv")
+
+# Vector to be removed
+filterGenus <- temp_df[temp_df$`2` < 10,]$Genus  #Can change this number should be at least greater than 2
+
+# Filter entries with unidentified Phylum.
+ps1 = subset_taxa(ps0, !Genus %in% filterGenus)
+
+# Summary
+ps
+ps0
+ps1
+
+```
+
+#Filter samples By categories 
+```{r}
+#GEt samples to keep for Built Environment (n=119)
+keep<- read.csv("keep.csv")
+ps_be<- subset_samples(ps1, samples %in% keep$Sample.ID)
+ps_be
+capture.output((ps_be), file = "Phyloseq_Object_BE.txt")
+
+
+#Filter by Facility 
+ps_be_NL<- subset_samples(ps_be, Facility=="Facility3")
+ps_be_NL
+ps_be_B<- subset_samples(ps_be, Facility=="Facility2")
+ps_be_B
+ps_be_WS<- subset_samples(ps_be, Facility=="Facility1")
+ps_be_WS
+
+#Room
+ps_PP<- subset_samples(ps_be, RoomType %in% c("Post-Pasteurization "))
+ps_PP
+ps_Ware<- subset_samples(ps_be, RoomType %in% c("Warehouse"))
+ps_Ware
+ps_Raw<- subset_samples(ps_be, RoomType %in% c("Raw"))
+ps_Raw
+ps_Filling<- subset_samples(ps_be, RoomType %in% c("Filling"))
+ps_Filling
+
+
+#Season
+ps_Fall<- subset_samples(ps_be, Season=="Fall")
+ps_Fall
+ps_Spring<- subset_samples(ps_be, Season=="Spring")
+ps_Spring
+ps_Winter<- subset_samples(ps_be, Season=="Winter")
+ps_Winter
+ps_Summer<- subset_samples(ps_be, Season=="Summer")
+ps_Summer
+
+#oBJECT
+ps_be_fan<- subset_samples(ps_be, Object =="Fan/Vent")
+ps_be_fan
+ps_be_wall<- subset_samples(ps_be, Object =="Wall/Ceiling")
+ps_be_wall
+ps_be_floor<- subset_samples(ps_be, Object =="Floor Object")
+ps_be_floor
+ps_be_door<- subset_samples(ps_be, Object =="Door")
+ps_be_door
+
+```
+
+#Beta Diversity PCOA Plots
+```{r}
+####################################################################################
+#FUNCTION 
+#calculate Beta diversity wtih phyloseq object
+#name  is a "string" to identify titles 
+setwd("./Beta")
+
+beta_diversity_phylogenic <- function(ps_object, meth, color_var){
+
+set.seed(101)
+
+physeq.ord.bray <- ordinate(ps_object, "PCoA", "bray", weighted=F)
+b.div.bray <- plot_ordination(ps_object, physeq.ord.bray , type= "samples", color= "RoomType") + geom_point(size=18)
+#+scale_color_manual(values=mycolors)
+
+b.div.bray <- b.div.bray  + ggtitle("Bray")  + theme_classic() + theme(axis.text.x = element_text(color= "black", size = 25, angle=45),axis.text.y = element_text(color= "black", size = 25), text = element_text(size=25,colour="black",face="bold"),strip.background = element_blank(), axis.text.x.bottom = element_text(angle = -90))+ stat_ellipse(geom = "polygon", alpha = 0.1, aes(color= RoomType, fill = RoomType))+
+scale_color_manual(values=color_factor)+scale_fill_manual(values=color_factor)
+#
+
+
+print(b.div.bray)
+
+#Export plot to .tif file 
+tiff(paste(meth, color_var,"Bray Beta Diversity.tif", sep=" "), res=300, compression = "lzw", height=9, width=12, units="in")
+print(b.div.bray)
+dev.off()
+
+pdf(paste(meth, color_var,"Bray Beta Diversity.pdf", sep=" "), height=9, width=12)
+print(b.div.bray)
+dev.off()
+
+}
+####################################################################################
+#Call Function 
+#Filter ps_be samples to get rid of zero rows
+
+#Get ride of Zero Rows or Beta Diversity will not work.  
+ps_be_f <- subset_samples(ps_be, !samples %in% c("sample-11", "sample-110", "sample-133", "sample-135", "sample-137", "sample-138", "sample-346" ,"sample-347", "sample-353", "sample-247", "sample-331","sample-332"))
+
+ps_be_fan2<- subset_samples(ps_be_f, Object =="Fan/Vent")
+ps_be_wall2<- subset_samples(ps_be_f, Object =="Wall/Ceiling")
+ps_be_floor2<- subset_samples(ps_be_f, Object =="Floor Object")
+ps_be_door2<- subset_samples(ps_be_f, Object =="Door")
+
+###########################################################
+beta_diversity_phylogenic(ps_be_fan2, "Fan", "RoomType_Color")
+beta_diversity_phylogenic(ps_be_floor2, "Floor", "RoomType_Color")
+beta_diversity_phylogenic(ps_be_door2, "Door", "RoomType_Color")
+beta_diversity_phylogenic(ps_be_wall2, "Wall", "RoomType_color")
+
+#beta_diversity_phylogenic(ps_be_f, "All", "Season")
+
+
+setwd("..")
+getwd()
+
+```
+
+
+#Permanova-Beta diversity-ANOVA and Posthoc 
+```{r}
+setwd("./Beta_permanova_object")
+
+#install_github("pmartinezarbizu/pairwiseAdonis/pairwiseAdonis")
+library(pairwiseAdonis)
+
+#Process otu files and metadata
+otu <- abundances(ps_be) 
+meta <- meta(ps_be)
+
+#Clean data
+r = 1 #rows
+c= 1 #colcums
+#Add pseudocounts
+row_n = dim(otu)[1]
+col_n = dim(otu)[2]
+while (r <= row_n){
+  c=1
+  while (c<=col_n){
+  if(otu[r,c]==0){
+    print('yes')
+    otu[r,c]=1}
+    c=c+1
+  }
+  r=r+1
+}
+#Calculate bray curtis distance
+dist <- vegdist(t(otu), "bray")
+print(dist)
+
+#Remove "inf from distnce
+len = length(dist)
+#Add pseudocounts
+j = 1
+while (j <= len){
+    if(dist[j]==Inf || dist[j] ==-Inf){
+    print('yes')
+    dist[j]=0}
+    j=j+1
+}
+
+################################################################################
+#Create function where name is a string of the metadata variable 
+beta_disp <- function(name){
+set.seed(99)
+#Create betadispirs plot
+bd = betadisper(dist, group = meta[,c(name)])
+
+df <- data.frame(Distance_to_centroid=bd$distances,Group=bd$group)
+groups <- bd$group
+
+mod <- betadisper(dist, groups)
+
+#Anova
+aov<- anova(mod)
+write.csv(aov, paste(name,"anova_mod_BRAY.csv"))
+
+#https://github.com/vegandevs/vegan/issues/166
+#The intention of betadisper is indeed to compare only sizes of ellipses. These sizes (covariances) will be calculated with respect to the centres used, and these centres default to spatial medians. These are somewhat wider than covariances calculated with respect to sample means. Therefore the centres are also important. We are maintaining the options to plot SD ellipses, but you must set type="centroid" to get the ellipses of correct sizes for the plot. Jury is still out for the modification of SD's that you seem to ask for.
+
+library(vegan)
+iris.bd <- wcmdscale(dist, eig = TRUE)  # PCoA
+
+#pairwise comparisions 
+post_hoc_permanova <- pairwise.adonis(t(otu), meta[,c(name)], sim.function = "vegdist", 
+sim.method = "bray", p.adjust.m = "fdr", reduce = NULL, perm = 999) 
+post_hoc_permanova 
+write.csv(post_hoc_permanova, paste(name,"posthoc_BRAY.csv"))
+
+
+}
+
+########################################RUN Function 
+beta_disp("Season")
+beta_disp("Object")
+beta_disp("Facility")
+beta_disp("RoomType")
+```
+
+
+#PERMANOVA-Adonis-Interactions 
+```{r}
+set.seed(92)
+#https://uw.pressbooks.pub/appliedmultivariatestatistics/chapter/permanova/ 
+
+#Y ~ a + b + a:b means that the response is modeled by a linear combination of a, b, and the interaction between a and b
+ad<- adonis2(dist ~meta$Facility+meta$RoomType+meta$Object+meta$Season+meta$Facility:meta$RoomType:meta$Object:meta$Season, method = "bray")
+ad
+write.csv(ad, "All_factors_nested.csv")
+
+
+#OVerall permanova
+Facility<- adonis2(dist ~meta$Facility, method = "bray")
+write.csv(Facility, "fACILITY PERMANOVA.CSV")
+
+AR<- adonis2(dist ~meta$RoomType, method = "bray")
+AR
+write.csv(AR, "AREA PERMANOVA.CSV")
+Season<- adonis2(dist ~meta$Season, method = "bray")
+Season
+
+ob<- adonis2(dist ~meta$Object, method = "bray")
+ob
+write.csv(ob, "Object PERMANOVA.CSV")
+
+```
+
+#PCOA with ellipse-SEASON 
+```{r}
+#################################
+
+set.seed(99)
+#Create betadispirs plot
+bd = betadisper(dist, group = meta$Season)
+
+df <- data.frame(Distance_to_centroid=bd$distances,Group=bd$group)
+groups <- bd$group
+df
+mod <- betadisper(dist, groups)
+mod
+#https://github.com/vegandevs/vegan/issues/166
+#The intention of betadisper is indeed to compare only sizes of ellipses. These sizes (covariances) will be calculated with respect to the centres used, and these centres default to spatial medians. These are somewhat wider than covariances calculated with respect to sample means. Therefore the centres are also important. We are maintaining the options to plot SD ellipses, but you must set type="centroid" to get the ellipses of correct sizes for the plot. Jury is still out for the modification of SD's that you seem to ask for.
+
+library(vegan)
+iris.bd <- wcmdscale(dist, eig = TRUE)  # PCoA
+x_axis = paste("PCOA1 (", round(iris.bd$eig[[1]],2), "%)")
+y_axis = paste("PCOA1 (", round(iris.bd$eig[[2]],2), "%)")
+
+#Save as .tiff
+library(heplots)
+
+labs <- paste0("Dimension ", 1:4, " (", 
+              round(100*iris.bd$eig / sum(iris.bd$eig), 2), "%)")
+
+#Get point values
+xx<- as.data.frame(iris.bd$points[,1:2])
+head(xx)
+xx$sampleid<- rownames(xx)
+head(xx)
+xx$Season<- metadata$Season[match(xx$sampleid, metadata$samples)]
+xx$Prod<- metadata$RoomType[match(xx$sampleid, metadata$samples)]
+head(xx)
+
+
+###############################SEASON################
+plot <- ggplot(xx, aes(x=Dim1,y=Dim2)) +
+      geom_point(aes(fill=Season,stroke=NA),pch=21,size=3) +
+      stat_ellipse(geom = "polygon",aes(group=Season,color=Season,fill=Season),alpha = 0.25, color=NA) +
+     scale_fill_manual(values=color_factor)+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+ theme(panel.background = element_blank(),axis.line = element_line( colour = "black"))+
+  labs(x = x_axis, y = y_axis) +
+    theme(axis.title=element_text(size=25, face="bold"))
+
+
+tiff(filename=paste("SEASON betadispr_color.tiff"), width=12, height=9, bg="white", res=300, units = "in")
+plot(plot)
+dev.off()
+
+pdf(paste("SEASON betadispr_color.pdf", sep=" "), width=12, height=9)
+plot(plot)
+dev.off()
+```
+
+#PCOA Plot by Production Area
+```{r}
+###############################AREA###############
+plot <- ggplot(xx, aes(x=Dim1,y=Dim2)) +
+      geom_point(aes(fill=Prod,stroke=NA),pch=21,size=3) +
+      stat_ellipse(geom = "polygon",aes(group=Prod,color=Season,fill=Prod),alpha = 0.25, color=NA) +
+     scale_fill_manual(values=color_factor)+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+ theme(panel.background = element_blank(),axis.line = element_line( colour = "black"))+
+  labs(x = x_axis, y = y_axis) +
+  theme(axis.title=element_text(size=25, face="bold"))
+
+
+tiff(filename=paste("PRODUCTION AREA betadispr_color.tiff"), width=12, height=9, bg="white", res=300, units = "in")
+plot(plot)
+dev.off()
+
+pdf(paste("PRODUCTION AREA betadispr_color.pdf", sep=" "), width=12, height=9)
+plot(plot)
+dev.off()
+```
+
+#PCOA Plot wtih Ellipse by Object
+```{r}
+###############################OBJECT###############
+
+set.seed(99)
+#Create betadispirs plot
+bd = betadisper(dist, group = meta$Object)
+
+df <- data.frame(Distance_to_centroid=bd$distances,Group=bd$group)
+groups <- bd$group
+df
+mod <- betadisper(dist, groups)
+mod
+#https://github.com/vegandevs/vegan/issues/166
+#The intention of betadisper is indeed to compare only sizes of ellipses. These sizes (covariances) will be calculated with respect to the centres used, and these centres default to spatial medians. These are somewhat wider than covariances calculated with respect to sample means. Therefore the centres are also important. We are maintaining the options to plot SD ellipses, but you must set type="centroid" to get the ellipses of correct sizes for the plot. Jury is still out for the modification of SD's that you seem to ask for.
+
+library(vegan)
+iris.bd <- wcmdscale(dist, eig = TRUE)  # PCoA
+x_axis = paste("PCOA1 (", round(iris.bd$eig[[1]],2), "%)")
+y_axis = paste("PCOA1 (", round(iris.bd$eig[[2]],2), "%)")
+
+#Save as .tiff
+library(heplots)
+
+labs <- paste0("Dimension ", 1:4, " (", 
+              round(100*iris.bd$eig / sum(iris.bd$eig), 2), "%)")
+
+#Get point values
+xx<- as.data.frame(iris.bd$points[,1:2])
+head(xx)
+xx$sampleid<- rownames(xx)
+head(xx)
+xx$Object<- metadata$Object[match(xx$sampleid, metadata$samples)]
+xx$Season<- metadata$Season[match(xx$sampleid, metadata$samples)]
+xx$Prod<- metadata$RoomType[match(xx$sampleid, metadata$samples)]
+head(xx)
+
+plot <- ggplot(xx, aes(x=Dim1,y=Dim2)) +
+      geom_point(aes(fill=Object,stroke=NA),pch=21,size=3) +
+      stat_ellipse(geom = "polygon",aes(group=Object,color=Object,fill=Object),alpha = 0.25, color=NA) +
+     scale_fill_manual(values=color_factor)+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+ theme(panel.background = element_blank(),axis.line = element_line( colour = "black"))+
+  labs(x = x_axis, y = y_axis) +
+  theme(axis.title=element_text(size=25, face="bold"))
+
+plot
+
+tiff(filename=paste("OBJECT betadispr_color.tiff"), width=12, height=9, bg="white", res=300, units = "in")
+plot(plot)
+dev.off()
+
+pdf(paste("OBJECT betadispr_color.pdf", sep=" "), width=12, height=9)
+plot(plot)
+dev.off()
+
+setwd("..")
+getwd()
+
+```
+
+
+
+
+
+
