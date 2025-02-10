@@ -1,0 +1,2 @@
+[1] "diameter= 3"                   "no. clusters 8"                "centrality= 0.145502645502645"
+[4] "no nodes= 28"                  "no degrees= 29"                "Avg deg= 1.0357"              
