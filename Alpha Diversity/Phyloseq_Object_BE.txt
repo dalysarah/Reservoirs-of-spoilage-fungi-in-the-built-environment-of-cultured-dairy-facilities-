@@ -1,0 +1,5 @@
+phyloseq-class experiment-level object
+otu_table()   OTU Table:         [ 1247 taxa and 119 samples ]
+sample_data() Sample Data:       [ 119 samples by 23 sample variables ]
+tax_table()   Taxonomy Table:    [ 1247 taxa by 7 taxonomic ranks ]
+phy_tree()    Phylogenetic Tree: [ 1247 tips and 1246 internal nodes ]
