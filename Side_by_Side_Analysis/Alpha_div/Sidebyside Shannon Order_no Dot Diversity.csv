@@ -1,0 +1,17 @@
+"","File_name","Year","Facility","Season","site_name","Room","Side","Swab_Site","Combined","Room_Site","Qubit","Nanodrop","YM_raw","YM_log","YM_cat","Order_no","samples","variable","value","se"
+"1","A1_ITS_2.fastq.gz",2024,"Facility1","Spring","A1","Warehouse","Side1","Door","Ware-Door-Side1-A","Ware-DoorA","0.09",2.3,200,2.3,"Low",1,"sample-1","Shannon",2.2322885605991,NA
+"2","B10_ITS_2.fastq.gz",2024,"Facility1","Spring","B10","Raw ","Side2","Wall","Raw-Wall-Side2-A","Raw-WallA","<0.05",1.6,20,1.3,"Low",12,"sample-10","Shannon",1.70563418645808,NA
+"3","B2_ITS_2.fastq.gz",2024,"Facility1","Spring","B2","Warehouse","Side2","Fan","Ware-Fan-Side2-A","Ware-FanA","<0.05",7,0,0,"Low",4,"sample-11","Shannon",2.2350603711033,NA
+"4","B3_ITS_2.fastq.gz",2024,"Facility1","Spring","B3","Warehouse","Side2","Floor","Ware-Floor-Side2-A","Ware-FloorA","0.135",1.3,600,2.78,"Low",6,"sample-12","Shannon",2.80587329901665,NA
+"5","B4_ITS_2.fastq.gz",2024,"Facility1","Spring","B4","Warehouse","Side2","Floor","Ware-Floor-Side2-B","Ware-FloorB","0.088",1.6,120,2.08,"Low",8,"sample-13","Shannon",2.99420804445329,NA
+"6","B7_ITS_2.fastq.gz",2024,"Facility1","Spring","B7","Raw ","Side2","Floor","Raw-Floor-Side2-A","Raw-FloorA","1.02",3.4,8640000,6.94,"High",10,"sample-14","Shannon",1.32187825740794,NA
+"7","B8_ITS_2.fastq.gz",2024,"Facility1","Spring","B8","Raw ","Side2","Floor","Raw-Floor-Side2-B","Raw-FloorB","0.701",4.5,200000,5.3,"Medium",14,"sample-15","Shannon",1.15519931111999,NA
+"8","B9_ITS_2.fastq.gz",2024,"Facility1","Spring","B9","Raw ","Side2","Wall","Raw-Wall-Side2-B","Raw-WallB","<0.05",1,100,2,"Low",16,"sample-16","Shannon",1.47244407308462,NA
+"9","A10_ITS_2.fastq.gz",2024,"Facility1","Spring","A10","Raw ","Side1","Wall","Raw-Wall-Side1-A","Raw-WallA","<0.05",2.3,620,2.79,"Low",11,"sample-2","Shannon",0.919894985350363,NA
+"10","A2_ITS_2.fastq.gz",2024,"Facility1","Spring","A2","Warehouse","Side1","Fan","Ware-Fan-Side1-A","Ware-FanA","<0.05",1.5,0,0,"Low",3,"sample-3","Shannon",1.48517870495884,NA
+"11","A3_ITS_2.fastq.gz",2024,"Facility1","Spring","A3","Warehouse","Side1","Floor","Ware-Floor-Side1-A","Ware-FloorA","0.138",1.5,640,2.81,"Low",5,"sample-4","Shannon",1.3629462971753,NA
+"12","A4_ITS_2.fastq.gz",2024,"Facility1","Spring","A4","Warehouse","Side1","Floor","Ware-Floor-Side1-B","Ware-FloorB","<0.05",2.1,280,2.45,"Low",7,"sample-5","Shannon",2.82788920818421,NA
+"13","A7_ITS_2.fastq.gz",2024,"Facility1","Spring","A7","Raw ","Side1","Floor","Raw-Floor-Side1-A","Raw-FloorA","2.7",9.7,7280000,6.86,"High",9,"sample-6","Shannon",1.4841772588289,NA
+"14","A8_ITS_2.fastq.gz",2024,"Facility1","Spring","A8","Raw ","Side1","Floor","Raw-Floor-Side1-B","Raw-FloorB","0.555",8,7720000,6.89,"High",13,"sample-7","Shannon",0.811329079386832,NA
+"15","A9_ITS_2.fastq.gz",2024,"Facility1","Spring","A9","Raw ","Side1","Wall","Raw-Wall-Side1-B","Raw-WallB","<0.05",2.8,60,1.78,"Low",15,"sample-8","Shannon",1.10492918716605,NA
+"16","B1_ITS_2.fastq.gz",2024,"Facility1","Spring","B1","Warehouse","Side2","Door","Ware-Door-Side2-A","Ware-DoorA","0.187",2.2,820,2.91,"Low",2,"sample-9","Shannon",2.24996302528454,NA
