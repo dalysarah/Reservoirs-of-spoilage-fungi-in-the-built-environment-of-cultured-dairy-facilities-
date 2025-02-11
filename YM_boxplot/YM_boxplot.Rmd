@@ -1,0 +1,146 @@
+---
+title: "YM boxplot"
+author: "Sarah Daly"
+date: "2024-07-22"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+#Set Working Directory
+```{r}
+setwd("C:/Users/dalys/Box/Microbial Food Safety & Spoilage Lab/Lab Members/Sarah Daly/ITS Methods Project/Github upload/YM_boxplot")
+
+list.files()
+library(ggplot2)
+library(see)
+```
+
+## Including Plots
+
+```{r}
+df<- read.csv("BE_meta.csv")
+head(df)
+
+df$Season<- ordered(df$Season, levels =c("Summer", "Fall", "Winter", "Spring"))
+df$Production.Area<- ordered(df$Production.Area, levels=c("Raw", "Filling","Post-Pasteurization", "Warehouse"))
+#df$Object <- ordered("Wall/Ceiling", "Door", "Fan/Vent", "Floor")
+head(df)
+unique(df$Production.Area)
+
+
+color_F <- c("Summer" = "firebrick",
+"Fall" =          "gold"  ,
+"Winter" =            "dodgerblue" ,  
+"Spring" =          "plum" ,
+ "Raw" =           "coral"  ,     
+ "Filling" =           "darkseagreen",
+ "Post-Pasteurization" = "darkorchid",
+"Post-Pasteurization " = "darkorchid",
+"Warehouse"= "burlywood", 
+"Wall/Ceiling"= "mediumaquamarine",
+"Door" = "grey",
+"Fan/Vent" = "lightgoldenrod",
+"Floor" = "hotpink")
+
+   ############SEASON ########################
+YM_Season<- ggplot(df, aes(x = Season, 
+             fill = Season,
+             color=Season,
+             y = Log10YM )) +
+  geom_boxplot(aes(fill=Season), position = position_dodge(0.9),alpha=0.3, width = 0.25) +theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(color= Season, fill=Season), alpha = 0.5, 
+                 position = position_jitterdodge(jitter.width = 2))+
+    geom_violinhalf(position = position_nudge(x = .18, y = 0))+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+  #ylab(((name)))+ #change y label
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+     scale_fill_manual(values=color_F)+
+  scale_colour_manual(values=color_F)
+
+YM_Season
+
+#Export plot to .tif file 
+tiff(paste("SEASON YM Boxplot.tif", sep=" "), res=300, compression = "lzw", height=9, width=9, units="in")
+print(YM_Season)
+dev.off()
+
+pdf(paste("SEASON YM Boxplot.pdf", sep=" "))
+print(YM_Season)
+dev.off()
+
+##################ARAE##############
+YM_area<- ggplot(df, aes(x = Production.Area, 
+             fill = Production.Area,
+             color=Production.Area,
+             y = Log10YM )) +
+  geom_boxplot(aes(fill=Production.Area), position = position_dodge(0.9),alpha=0.3, width = 0.25) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(color= Production.Area, fill=Production.Area), alpha = 0.5, 
+                 position = position_jitterdodge(jitter.width = 2))+
+    geom_violinhalf(position = position_nudge(x = .18, y = 0))+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0))+ #Force axis to start at 0 
+  #ylab(((name)))+ #change y label
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+     scale_fill_manual(values=color_F)+
+  scale_colour_manual(values=color_F)
+
+YM_area
+
+#Export plot to .tif file 
+tiff(paste("AREA YM Boxplot.tif", sep=" "), res=300, compression = "lzw", height=9, width=9, units="in")
+print(YM_area)
+dev.off()
+
+pdf(paste("AREA YM Boxplot.pdf", sep=" "))
+print(YM_area)
+dev.off()
+################OBJECT
+
+YM_object<- ggplot(df, aes(x = Object, 
+             fill = Object,
+             color=Object,
+             y = Log10YM )) +
+  geom_boxplot(aes(fill=Object), position = position_dodge(0.9),alpha=0.3, width = 0.25) +
+  theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), #Remove background
+panel.background = element_blank(), axis.line = element_line(colour = "black"))+
+  geom_point(aes(color= Object, fill=Object), alpha = 0.5, 
+                 position = position_jitterdodge(jitter.width = 0.25))+
+    geom_violinhalf(position = position_nudge(x = .18, y = 0))+
+theme(text = element_text(size=20,colour="black",face="bold"), 
+       axis.text.x = element_text(angle=45,hjust = 1, size=25,colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.text.y = element_text(angle = 0, hjust = 1, size=25, colour = 'black',margin=unit(c(0.5,0.5,0.5,0.5), "cm")),
+     axis.ticks.length = unit(-0.25, "cm"), #-0.25 (inside)
+     plot.title= element_text(hjust = 0.9))+
+  scale_x_discrete(expand = c(0, 0))+
+  scale_y_continuous(expand = c(0, 0), limits=c(0,10), breaks=seq(0,10,2))+ #Force axis to start at 0 
+  theme(axis.ticks.x = element_blank())+ # Remove x axis tick marks
+     scale_fill_manual(values=color_F)+
+  scale_colour_manual(values=color_F)
+
+YM_object
+
+#Export plot to .tif file 
+tiff(paste("OBJECt YM Boxplot.tif", sep=" "), res=300, compression = "lzw", height=9, width=9, units="in")
+print(YM_object)
+dev.off()
+
+pdf(paste("OBJECT YM Boxplot.pdf", sep=" "))
+print(YM_object)
+dev.off()
+
+```
