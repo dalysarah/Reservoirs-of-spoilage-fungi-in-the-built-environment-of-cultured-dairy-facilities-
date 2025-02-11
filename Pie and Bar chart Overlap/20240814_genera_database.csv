@@ -1,0 +1,219 @@
+No.,Shipment,Date_Recieved,Site,Sample_Type,Yogurt_Flavor,Genera
+1,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Hanseniaspora (Kloechera)
+5,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Hanseniaspora (Kloechera)
+2,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Pichia
+6,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Pichia
+3,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Saccharomyces
+4,1,20220930,Facility3,Yogurt,"Peach, apricot & Almond ",Saccharomyces
+11,2,20221027,Facility1,Cottage Cheese,,Leucosporidium
+7,2,20221027,Facility1,Yogurt,Peach,Mucor
+8,2,20221027,Facility1,Cottage Cheese,,Mucor
+13,2,20221027,Facility1,Yogurt,Strawberry,Mucor
+9,2,20221027,Facility1,Cottage Cheese,,Penicillium 
+10,2,20221027,Facility1,Cottage Cheese,,Penicillium 
+12,2,20221027,Facility1,Yogurt,Strawberry,Penicillium 
+14,3,20221101,Facility2,Yogurt,Vanilla,Mucor
+15,3,20221101,Facility2,Yogurt,Strawberry,None
+22,4,20221102,Facility3,Yogurt,Coconut Almond,Penicillium 
+38,5,20221115,Facility1,Yogurt,Cappuccino,Candida
+40,5,20221115,Facility1,Cottage Cheese,,Clavispora
+31,5,20221115,Facility1,Yogurt,Blueberry,Mucor
+32,5,20221115,Facility1,Yogurt,Vanilla,Mucor
+36,5,20221115,Facility1,Yogurt,Blackberry,Mucor
+39,5,20221115,Facility1,Yogurt,Cappuccino,Mucor
+41,5,20221115,Facility1,Cottage Cheese,,Mucor
+45,5,20221115,Facility1,Cottage Cheese,,Mucor
+48,5,20221115,Facility1,Yogurt,Vanilla Blended,Mucor
+33,5,20221115,Facility1,Yogurt,Vanilla,Penicillium 
+35,5,20221115,Facility1,Yogurt,Strawberry Bananna,Penicillium 
+37,5,20221115,Facility1,Cottage Cheese,,Penicillium 
+46,5,20221115,Facility1,Sour Cream,,Penicillium 
+50,5,20221115,Facility1,Yogurt,Vanilla Blended,Penicillium 
+43,5,20221115,Facility1,Cottage Cheese,,Pichia
+34,5,20221115,Facility1,Yogurt,Strawberry Bananna,Torulaspora
+42,5,20221115,Facility1,Cottage Cheese,,Yarrowia
+44,5,20221115,Facility1,Cottage Cheese,,Yarrowia
+47,5,20221115,Facility1,Sour Cream,,Yarrowia
+49,5,20221115,Facility1,Yogurt,Vanilla Blended,Yarrowia
+51,6,20221129,Facility3,Yogurt,Blueberry Bilberry,Bullera
+52,6,20221129,Facility3,Yogurt,Blueberry Bilberry,None
+54,7,20221207,Facility3,Yogurt,Strawberry Almond,Cladosporium
+59,7,20221207,Facility3,Yogurt, Mx Berry,None
+53,7,20221207,Facility3,Yogurt,Strawberry Almond,Penicillium 
+55,7,20221207,Facility3,Yogurt,Strawberry Almond,Penicillium 
+56,7,20221207,Facility3,Yogurt,Strawberry Almond,Penicillium 
+57,7,20221207,Facility3,Yogurt,Peach Apricot,Penicillium 
+58,7,20221207,Facility3,Yogurt,Vanilla,Penicillium 
+60,7,20221207,Facility3,Yogurt,Strawberry Bananna,Penicillium 
+76,9,20221209,Facility1,Yogurt,Blueberry,Candida
+77,9,20221209,Facility1,Yogurt,Strawberry,Candida
+62,8,20221209,Facility2,Yogurt,Peach,None
+74,9,20221209,Facility1,Yogurt,Plain,None
+75,9,20221209,Facility1,Yogurt,Plain,None
+61,8,20221209,Facility2,Yogurt,Plain,Penicillium 
+80,10,20230104,Facility3,Yogurt,Blue Walnut,Cladosporium
+89,10,20230104,Facility3,Yogurt,Blueberry Bilberry,Mucor
+92,10,20230104,Facility3,Yogurt,Plain,Mucor
+93,10,20230104,Facility3,Yogurt,Vanilla,Mucor
+79,10,20230104,Facility3,Yogurt,Blue Walnut,Penicillium 
+81,10,20230104,Facility3,Yogurt,Blue Walnut,Penicillium 
+82,10,20230104,Facility3,Yogurt,Blue Walnut,Penicillium 
+83,10,20230104,Facility3,Yogurt,Cold Brew,Penicillium 
+85,10,20230104,Facility3,Yogurt,Vanilla,Penicillium 
+86,10,20230104,Facility3,Yogurt,Vanilla,Penicillium 
+87,10,20230104,Facility3,Yogurt,Strawberry,Penicillium 
+88,10,20230104,Facility3,Yogurt,Plain,Rhodosporidiobolus
+78,10,20230104,Facility3,Yogurt,,Sporobolomyces
+84,10,20230104,Facility3,Yogurt,Vanilla,Sporobolomyces
+90,10,20230104,Facility3,Yogurt,Plain,Yarrowia
+91,10,20230104,Facility3,Yogurt,Plain,Yarrowia
+109,11,20230117,Facility3,Yogurt,Peach Apricot,Cladosporium
+104,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Cystofilobasidium
+94,11,20230117,Facility3,Yogurt,Blueberry Bilberry,None
+97,11,20230117,Facility3,Yogurt,Blueberry Bilberry,None
+99,11,20230117,Facility3,Yogurt,Blueberry Bilberry,None
+107,11,20230117,Facility3,Yogurt,Blueberry Bilberry,None
+95,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+96,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+98,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+100,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+102,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+103,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+105,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+106,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+108,11,20230117,Facility3,Yogurt,Cherry Almond,Penicillium 
+110,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+111,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+101,11,20230117,Facility3,Yogurt,Blueberry Bilberry,Trametes
+119,12,20230125,Facility3,Yogurt,Blueberry Bilberry,Cystofilobasidium
+116,12,20230125,Facility3,Yogurt,Strawberry Almond,Penicillium 
+117,12,20230125,Facility3,Yogurt,Blue Walnut,Penicillium 
+118,12,20230125,Facility3,Yogurt,Cold Brew,Penicillium 
+120,12,20230125,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+121,12,20230125,Facility3,Yogurt,Raspberry,Penicillium 
+136,14,20230201,Facility3,Yogurt,Coconut,Aureobasidium
+137,14,20230201,Facility3,Yogurt,Coconut,Filobasidium
+127,14,20230201,Facility3,Yogurt,Vanilla,Penicillium 
+128,14,20230201,Facility3,Yogurt,Vanilla,Penicillium 
+129,14,20230201,Facility3,Yogurt,Cherry Almond,Penicillium 
+130,14,20230201,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+131,14,20230201,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+132,14,20230201,Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+133,14,20230201,Facility3,Yogurt,Raspberry,Penicillium 
+134,14,20230201,Facility3,Yogurt,Raspberry,Penicillium 
+135,14,20230201,Facility3,Yogurt,Raspberry,Penicillium 
+138,14,20230201,Facility3,Yogurt,Coconut,Penicillium 
+140,15,20230206,Facility2,Yogurt,Vanilla,Galactomyces
+144,15,20230206,Facility2,Yogurt,Vanilla,Galactomyces
+149,15,20230206,Facility2,Yogurt,Plain,Galactomyces
+142,15,20230206,Facility2,Yogurt,Vanilla,Kluyveromyces
+146,15,20230206,Facility2,Yogurt,Vanilla,Kluyveromyces
+139,15,20230206,Facility2,Yogurt,Vanilla,Mucor
+143,15,20230206,Facility2,Yogurt,Vanilla,Mucor
+147,15,20230206,Facility2,Yogurt,Plain,Mucor
+152,15,20230206,Facility2,Yogurt,Vanilla,Mucor
+154,15,20230206,Facility2,Yogurt,Vanilla,Mucor
+141,15,20230206,Facility2,Yogurt,Vanilla,Penicillium 
+145,15,20230206,Facility2,Yogurt,Vanilla,Penicillium 
+148,15,20230206,Facility2,Yogurt,Plain,Penicillium 
+150,15,20230206,Facility2,Yogurt,Vanilla,Penicillium 
+153,15,20230206,Facility2,Yogurt,Vanilla,Penicillium 
+155,15,20230206,Facility2,Yogurt,Plain,Penicillium 
+151,15,20230206,Facility2,Yogurt,Vanilla,Yarrowia
+160,16,20230208,Facility3,Yogurt,Coconut,Aureobasidium
+167,16,20230208,Facility3,Yogurt,Blueberry Bilberry,Paecilomyces
+168,16,20230208,Facility3,Yogurt,Blueberry Bilberry,Paecilomyces
+169,16,20230208,Facility3,Yogurt,Blueberry Bilberry,Paecilomyces
+157,16,20230208,Facility3,Yogurt,Blue Walnut,Penicillium 
+158,16,20230208,Facility3,Yogurt,Strawberry Almond,Penicillium 
+159,16,20230208,Facility3,Yogurt,Strawberry Almond,Penicillium 
+161,16,20230208,Facility3,Yogurt,Raspberry,Penicillium 
+156,16,20230208,Facility3,Yogurt,Lime,Sporobolomyces
+162,16,20230208,Facility3,Yogurt,Plain,Yarrowia
+163,16,20230208,Facility3,Yogurt,Plain,Yarrowia
+164,16,20230208,Facility3,Yogurt,Plain,Yarrowia
+165,16,20230208,Facility3,Yogurt,Vanilla,Yarrowia
+166,16,20230208,Facility3,Yogurt,Vanilla,Yarrowia
+170,17,20230215,Facility3,Yogurt,Coconut Almond,Aureobasidium
+173,17,20230215,Facility3,Yogurt,Blueberry Bilberry,Paecilomyces
+174,17,20230215,Facility3,Yogurt,Blueberry Bilberry,Paecilomyces
+171,17,20230215,Facility3,Yogurt,Coconut Almond,Penicillium 
+172,17,20230215,Facility3,Yogurt,Peach apricot,Penicillium 
+178,18,20230302,Facility3,Yogurt,Lemon,Penicillium 
+179,18,20230302,Facility3,Yogurt,Cold Brew,Penicillium 
+180,18,20230302,Facility3,Yogurt,Vanilla,Penicillium 
+181,18,20230302,Facility3,Yogurt,Blue Walnut,Penicillium 
+182,18,20230302,Facility3,Yogurt,Blue Walnut,Penicillium 
+183,18,20230302,Facility3,Yogurt,Blue Walnut,Penicillium 
+184,18,20230302,Facility3,Yogurt,Strawberry Almond,Penicillium 
+185,18,20230302,Facility3,Yogurt,Blueberry Bilberry,Rhodotorula
+186,18,20230302,Facility3,Yogurt,Blueberry Bilberry,Rhodotorula
+187,18,20230302,Facility3,Yogurt,Blueberry Bilberry,Rhodotorula
+205,19,20230309,Facility3,Yogurt,Vanilla,Botryotinia
+188,19,20230309,Facility3,Yogurt,coconut,Cladosporium
+190,19,20230309,Facility3,Yogurt,coconut,Neoascochyta
+189,19,20230309,Facility3,Yogurt,coconut,Penicillium 
+191,19,20230309,Facility3,Yogurt,Vanilla,Penicillium 
+192,19,20230309,Facility3,Yogurt,Vanilla,Penicillium 
+193,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+194,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+195,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+196,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+197,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+198,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+199,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+200,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+201,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+202,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+203,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+204,19,20230309,Facility3,Yogurt,Vanilla,Penicillium 
+206,19,20230309,Facility3,Yogurt,Cherry Almond,Penicillium 
+207,19,20230309,Facility3,Yogurt,Coconut Almond,Penicillium 
+218,20,20230316,Facility3,Yogurt,,Rhodotorula
+208,20,20230316,Facility3,Yogurt,,Yarrowia
+209,20,20230316,Facility3,Yogurt,,Yarrowia
+210,20,20230316,Facility3,Yogurt,,Yarrowia
+211,20,20230316,Facility3,Yogurt,,Yarrowia
+212,20,20230316,Facility3,Yogurt,,Yarrowia
+213,20,20230316,Facility3,Yogurt,,Yarrowia
+214,20,20230316,Facility3,Yogurt,,Yarrowia
+215,20,20230316,Facility3,Yogurt,,Yarrowia
+216,20,20230316,Facility3,Yogurt,,Yarrowia
+217,20,20230316,Facility3,Yogurt,,Yarrowia
+219,21,20230317,Facility1,Yogurt,,Mucor
+220,21,20230317,Facility1,Yogurt,,Mucor
+221,22,20230320,Facility2,Yogurt,,Penicillium 
+222,23,20230412,Facility3,Yogurt,,Aureobasidium
+223,23,20230412,Facility3,Yogurt,,Aureobasidium
+224,23,20230412,Facility3,Yogurt,,Candida
+225,23,20230412,Facility3,Yogurt,,Penicillium 
+229,24,20230426,Facility3,Yogurt,,Mucor
+226,24,20230426,Facility3,Yogurt,,Penicillium 
+227,24,20230426,Facility3,Yogurt,,Penicillium 
+228,24,20230426,Facility3,Yogurt,,Penicillium 
+230,24,20230426,Facility3,Yogurt,,Penicillium 
+232,25,20230428,Facility3,Yogurt,,Geotrichum/Galactomyces
+234,25,20230428,Facility3,Yogurt,,Geotrichum/Galactomyces
+236,25,20230428,Facility3,Yogurt,,Geotrichum/Galactomyces
+231,25,20230428,Facility3,Yogurt,,Mucor
+233,25,20230428,Facility3,Yogurt,,Mucor
+235,25,20230428,Facility3,Yogurt,,Mucor
+237,25,20230428,Facility3,Yogurt,,Mucor
+238,25,20230428,Facility3,Yogurt,,Mucor
+239,25,20230428,Facility3,Yogurt,,Mucor
+240,26,20230510,Facility3,Yogurt,,Aureobasidium
+242,27,20230519,Facility2,Yogurt,Strawberry,Mucor
+241,27,20230519,Facility2,Yogurt,Strawberry,Yarrowia
+243,27,20230519,Facility2,Yogurt,Strawberry,Yarrowia
+244,27,20230519,Facility2,Yogurt,Strawberry,Yarrowia
+245,28,20230615,Facility2,Yogurt,,Mucor
+125,16,"20230127
+",Facility3,Yogurt,Vanilla,Cladosporium
+123,14,"20230127
+",Facility3,Yogurt,Blueberry Bilberry,None
+124,15,"20230127
+",Facility3,Yogurt,Blueberry Bilberry,None
+122,13,"20230127
+",Facility3,Yogurt,Blueberry Bilberry,Penicillium 
+126,17,"20230127
+",Facility3,Yogurt,Peach Apricot,Penicillium 
