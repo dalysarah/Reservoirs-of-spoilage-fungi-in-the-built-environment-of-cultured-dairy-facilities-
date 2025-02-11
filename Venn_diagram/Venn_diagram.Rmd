@@ -1,0 +1,105 @@
+---
+title: "Venn diagram"
+author: "Sarah Daly"
+date: '2024-07-02'
+output:
+  html_document: default
+  word_document: default
+editor_options:
+  chunk_output_type: console
+---
+Input:
+.csv files with taxonmy 
+
+Output
+.csv and .tif 
+
+
+#Load Packages
+There will be errors/warnings when you load packages but most you can ignore 
+```{r}
+setwd("C:/Users/dalys/Box/Microbial Food Safety & Spoilage Lab/Lab Members/Sarah Daly/ITS Methods Project/Github upload/Venn_diagram")
+
+#install.packages("VennDiagram")
+
+library(VennDiagram)
+```
+
+
+#Load data-
+```{r}
+#This can be any file with a list of taxa-whether it's core taxa, list of taxa, ect.  
+taxa_Wall<- read.csv("Wall_Ceiling_Genera_RA.csv")
+taxa_Door<- read.csv("Door_Genera_RA.csv")
+taxa_Fan<- read.csv("Fan_vent_genera_RA.csv")
+taxa_Floor<- read.csv("floor_genera_RA.csv")
+
+head(taxa_Wall)
+dim(taxa_Wall)
+```
+
+#Venn Diagram
+https://www.nicholas-ollberding.com/post/identifying-differentially-abundant-features-in-microbiome-data/
+```{r}
+#Compare ASV and OTU #######################################
+#Find taxa that overlap
+overlap<- Reduce(intersect, list(taxa_Wall$Genera, taxa_Door$Genera,taxa_Fan$Genera,taxa_Floor$Genera))   
+overlap
+write.csv(overlap, "Swab Sites Overlapping GENERA.csv")
+
+venn <- venn.diagram(
+  x = list(Wall = taxa_Wall$Genera, 
+           Door = taxa_Door$Genera,
+           Fan = taxa_Fan$Genera,
+           Floor = taxa_Floor$Genera),
+  category.names = c("Wall/Ceiling", "Door", "Fan/Vent", "Floor"),
+  filename = NULL,
+  fill= c("mediumaquamarine", "grey","lightgoldenrod", "hotpink"),
+  margin = 0.1,
+  
+  # Increase font size for category names
+  cat.cex = 3.5,
+  cat.fontface = "bold",
+  
+  # Increase font size for numbers in the diagram
+  cex = 3.5,)
+
+grid::grid.newpage()
+grid::grid.draw(venn)  
+  
+ 
+
+#Export plot to .tif file 
+tiff(paste("Swab Sites Venn overlap GENERA.tif", sep=" "), res=300, compression = "lzw", height=9, width=12, units="in")
+print(grid::grid.draw(venn))
+dev.off()
+
+pdf(paste("Swab Sites Venn overlap GENERA.pdf", sep=" "),height=9, width=12)
+print(grid::grid.draw(venn))
+dev.off()
+
+
+
+# Find taxa unique 
+unique_to_Wall <- setdiff(taxa_Wall$OTUID, overlap)
+unique_to_Wall
+
+# Find taxa unique =
+unique_to_Door <- setdiff(taxa_Door$OTUID, overlap)
+unique_to_Door
+
+# Find taxa unique =
+unique_to_Fan <- setdiff(taxa_Fan$OTUID, overlap)
+unique_to_Fan
+
+# Find taxa unique=
+unique_to_Floor <- setdiff(taxa_Floor$OTUID, overlap)
+unique_to_Floor
+
+# Write these unique taxa to separate CSV files
+write.csv(unique_to_Wall, "Wall Unique Organisms.csv")
+write.csv(unique_to_Door, "Door Unique Organisms.csv")
+write.csv(unique_to_Fan, "Fan Unique Organisms.csv")
+write.csv(unique_to_Floor, "Floor Unique Organisms.csv")
+```
+

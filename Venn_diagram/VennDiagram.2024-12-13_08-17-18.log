@@ -1,0 +1,28 @@
+INFO [2024-12-13 08:17:18] $x
+INFO [2024-12-13 08:17:18] list(Wall = taxa_Wall$Genera, Door = taxa_Door$Genera, Fan = taxa_Fan$Genera, 
+INFO [2024-12-13 08:17:18]     Floor = taxa_Floor$Genera)
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $category.names
+INFO [2024-12-13 08:17:18] c("Wall/Ceiling", "Door", "Fan/Vent", "Floor")
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $filename
+INFO [2024-12-13 08:17:18] NULL
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $fill
+INFO [2024-12-13 08:17:18] c("mediumaquamarine", "grey", "lightgoldenrod", "hotpink")
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $margin
+INFO [2024-12-13 08:17:18] [1] 0.1
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $cat.cex
+INFO [2024-12-13 08:17:18] [1] 3.5
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $cat.fontface
+INFO [2024-12-13 08:17:18] [1] "bold"
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] $cex
+INFO [2024-12-13 08:17:18] [1] 3.5
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] [[9]]
+INFO [2024-12-13 08:17:18] 
+INFO [2024-12-13 08:17:18] 
